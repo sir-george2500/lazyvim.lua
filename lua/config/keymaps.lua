@@ -4,7 +4,7 @@
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.api.nvim_set_keymap("n", "<leader>D", ":t.<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dt", ":t.<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>Ca", 'ggVG"+y', { noremap = true, silent = true })
 
@@ -16,3 +16,6 @@ vim.api.nvim_set_keymap(
   "ggVG<cmd>lua vim.lsp.buf.format({ async = true })<CR>",
   { noremap = true, silent = true }
 )
+
+-- Define a command for sorting imports
+vim.api.nvim_create_user_command("SortImports", "silent !import-sort %", {})

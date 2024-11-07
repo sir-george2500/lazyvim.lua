@@ -22,6 +22,14 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "plugins.alpha" },
     { import = "plugins.dashboard" },
+    { import = "plugins.rose_pine" },
+    { import = "plugins.trans" },
+    { import = "plugins.undoTree" },
+    { import = "plugins.java_plugin" },
+    { import = "plugins.fugitive" },
+    { import = "plugins.go_debugger" },
+    { import = "plugins.surround" },
+    { import = "plugins.mini_surround" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
