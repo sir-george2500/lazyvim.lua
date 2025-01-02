@@ -30,6 +30,8 @@ require("lazy").setup({
     { import = "plugins.go_debugger" },
     { import = "plugins.surround" },
     { import = "plugins.mini_surround" },
+    { import = "plugins.try_copilot" },
+    { import = "plugins.nvim-java" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
