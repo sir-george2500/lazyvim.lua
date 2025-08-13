@@ -23,6 +23,8 @@ require("lazy").setup({
     { import = "plugins.alpha" },
     -- { import = "plugins.dashboard" },
     { import = "plugins.rose_pine" },
+    { import = "plugins.copilot-chat" },
+    { import = "plugins.terminal" },
     { import = "plugins.trans" },
     { import = "plugins.undoTree" },
     { import = "plugins.fugitive" },
