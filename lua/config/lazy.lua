@@ -24,7 +24,7 @@ require("lazy").setup({
     -- { import = "plugins.dashboard" },
     { import = "plugins.rose_pine" },
     { import = "plugins.copilot-chat" },
-    { import = "plugins.terminal" },
+    --- { import = "plugins.terminal" },
     { import = "plugins.trans" },
     { import = "plugins.undoTree" },
     { import = "plugins.fugitive" },
@@ -33,6 +33,7 @@ require("lazy").setup({
     { import = "plugins.mini_surround" },
     { import = "plugins.try_copilot" },
     { import = "plugins.jupynium" },
+    { import = "plugins.magent" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
