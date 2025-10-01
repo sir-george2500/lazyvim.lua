@@ -4,28 +4,13 @@ return {
   build = "npm install --frozen-lockfile",
   opts = {
     profiles = {
-      -- PREMIUM Claude
       {
-        name = "copilot-claude",
-        provider = "copilot",
-        model = "claude-sonnet-4.5",
-        fastModel = "claude-sonnet-4",
-      },
-
-      -- FREE GPT
-      {
-        name = "copilot-gpt-free",
-        provider = "copilot",
-        model = "gpt-4.1",
-        fastModel = "gpt-5-mini",
-      },
-
-      -- PREMIUM GPT
-      {
-        name = "copilot-gpt",
-        provider = "copilot",
-        model = "gpt-5",
-        fastModel = "gpt-5-mini",
+        name = "local-llama",
+        provider = "local",                  -- <-- use local provider
+        model = "llama3",                    -- your local model
+        server = "http://127.0.0.1:35203",  -- local Ollama server
+        isLocal = true,                      -- treat as local-only
+        useTools = false,                    -- disable tools
       },
     },
     sidebarPosition = "right",
@@ -41,26 +26,8 @@ return {
     { "<leader>me", "<cmd>MagentaExplain<cr>", desc = "Explain selection", mode = "v" },
     { "<leader>mf", "<cmd>MagentaFix<cr>", desc = "Fix code issues", mode = "v" },
     { "<leader>mr", "<cmd>MagentaRefactor<cr>", desc = "Refactor selection", mode = "v" },
-
-    -- Switch profile manually
     { "<leader>mp", "<cmd>MagentaSelectProfile<cr>", desc = "Select Magenta profile" },
-
-    -- Toggle between PREMIUM GPT and FREE GPT
-    {
-      "<leader>mgft",
-      function()
-        local current = require("magenta").get_current_profile().name
-        if current == "copilot-gpt" then
-          require("magenta").set_profile("copilot-gpt-free")
-          print("Switched to FREE GPT model")
-        else
-          require("magenta").set_profile("copilot-gpt")
-          print("Switched to PREMIUM GPT model")
-        end
-      end,
-      desc = "Toggle GPT free/premium model",
-    },
-
     { "<leader>mx", "<cmd>MagentaClearChat<cr>", desc = "Clear current chat" },
   },
 }
+
