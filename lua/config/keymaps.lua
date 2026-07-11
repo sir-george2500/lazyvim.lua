@@ -19,3 +19,18 @@ end, { silent = true, desc = "Format file (LSP)" })
 
 -- Define a command for sorting imports
 vim.api.nvim_create_user_command("SortImports", "silent !import-sort %", {})
+
+-- Config cheatsheet in a floating window: <leader>D or :Docs (q to close)
+local function open_docs()
+  Snacks.win({
+    file = vim.fn.stdpath("config") .. "/CHEATSHEET.md",
+    width = 0.85,
+    height = 0.9,
+    border = "rounded",
+    title = " Config Cheatsheet ",
+    wo = { wrap = true, spell = false, conceallevel = 3, signcolumn = "no", statuscolumn = "" },
+    bo = { modifiable = false },
+  })
+end
+vim.keymap.set("n", "<leader>D", open_docs, { desc = "Config cheatsheet" })
+vim.api.nvim_create_user_command("Docs", open_docs, {})
