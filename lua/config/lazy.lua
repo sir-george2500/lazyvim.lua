@@ -18,22 +18,8 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import/override with your plugins
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "plugins.alpha" },
-    -- { import = "plugins.dashboard" },
-    { import = "plugins.rose_pine" },
-    { import = "plugins.copilot-chat" },
-    --- { import = "plugins.terminal" },
-    { import = "plugins.trans" },
-    { import = "plugins.undoTree" },
-    { import = "plugins.fugitive" },
-    { import = "plugins.go_debugger" },
-    { import = "plugins.surround" },
-    { import = "plugins.mini_surround" },
-    { import = "plugins.try_copilot" },
-    { import = "plugins.jupynium" },
-    { import = "plugins.magent" },
+    -- import/override with your plugins (loads every file in lua/plugins/)
+    { import = "plugins" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -44,8 +30,11 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  install = { colorscheme = { "rose-pine", "tokyonight", "habamax" } },
+  checker = {
+    enabled = true, -- automatically check for plugin updates
+    notify = false, -- don't spam a notification on every startup
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
