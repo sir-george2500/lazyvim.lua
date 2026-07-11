@@ -119,6 +119,27 @@ Enter yourself. Claude's edits come back as diffs you accept or reject.
 | `<leader>du` | Toggle DAP UI |
 | `:DapTerminate` | Stop the session |
 
+## Java & Spring Boot
+
+Open any `.java` file in a Maven/Gradle project and two language servers attach
+automatically: **jdtls** (completion, navigation, refactoring, debug, test) and
+**spring-boot** (live Spring symbols, `application.properties`/`yaml` completion
+& validation). Lombok is preconfigured. JDK comes from `JAVA_HOME` (sdkman).
+
+| Key | Mode | Behavior (Java buffers) |
+|---|---|---|
+| `<leader>co` | n | Organize imports |
+| `<leader>cxv` / `cxc` | n, v | Extract variable / constant |
+| `<leader>cxm` | v | Extract method |
+| `<leader>cgs` / `cgS` | n | Go to super / subjects |
+| `<leader>tt` | n | Run all tests in class (debugger-backed) |
+| `<leader>tr` | n | Run nearest test method |
+| `<leader>tT` | n | Pick a test to run |
+
+Debugging uses the same DAP keys as everywhere (`<leader>db` breakpoint,
+`<leader>dc` continue — main classes are auto-discovered). For Spring Boot,
+run the app with `<leader>dc` or from a terminal: `mvn spring-boot:run`.
+
 ## Extras & tools
 
 - **Jupynium** (Jupyter in Neovim): `:JupyniumStartAndAttachToServer`, then edit
