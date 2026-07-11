@@ -10,7 +10,7 @@ Built on [LazyVim](https://lazyvim.org). Theme: rose-pine (transparent).
 | Path | What lives there |
 |---|---|
 | `lua/config/lazy.lua` | Bootstraps lazy.nvim, imports LazyVim + everything in `lua/plugins/` |
-| `lua/config/options.lua` | Editor options (`vim.g.ai_cmp = false` → Copilot ghost text) |
+| `lua/config/options.lua` | Editor options |
 | `lua/config/keymaps.lua` | Custom keymaps + the `:Docs` command |
 | `lua/plugins/*.lua` | One file per plugin/concern — every file is auto-loaded |
 | `lazyvim.json` | LazyVim extras (Go, Java, Tailwind, DAP, Telescope, Harpoon, …) |
@@ -51,14 +51,6 @@ Enter yourself. Claude's edits come back as diffs you accept or reject.
 4. Review the diff: `<leader>ay` accept / `<leader>an` deny.
 5. `<leader>at` on the same selection for tests → run them yourself →
    `<leader>aR` before you commit.
-
-## Copilot (inline ghost text)
-
-| Key | Mode | Behavior |
-|---|---|---|
-| `Ctrl+l` | i | Accept suggestion |
-| `Ctrl+j` / `Ctrl+k` | i | Next / previous suggestion |
-| `Ctrl+h` | i | Dismiss suggestion |
 
 ## Custom editing keymaps
 
